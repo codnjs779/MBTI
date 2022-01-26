@@ -3,7 +3,13 @@ import styles from "./Result.module.css";
 import img from "../../images/sample.PNG";
 import BlackButton from "../blackBtn/BlackButton";
 import YellowButton from "../yellowBtn/YellowButton";
+import { useNavigate } from "react-router-dom";
 const Result = () => {
+    const retryNavigate = useNavigate();
+
+    const retryTest = () => {
+        retryNavigate("/");
+    };
     return (
         <div className={styles.resultBox}>
             <section className={styles.scoreSection}>
@@ -59,7 +65,7 @@ const Result = () => {
             </section>
             <section className={styles.buttonBox}>
                 <div className={styles.retry}>
-                    <BlackButton buttonTxt="다시하기" />
+                    <BlackButton onClick={retryTest} buttonTxt="다시하기" />
                 </div>
                 <div className={styles.share}>
                     <YellowButton buttonTxt="결과 링크 공유하기" />

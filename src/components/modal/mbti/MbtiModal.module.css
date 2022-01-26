@@ -1,0 +1,29 @@
+@value white, formboxShodow,buttonGrey from '../../../common/colors.css';
+
+.mbtiSet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-content: space-around;
+    background: white;
+    height: 250px;
+    width: 100%;
+    padding: 0;
+    box-shadow: formboxShodow;
+}
+.mbtiItem {
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: formboxShodow;
+    margin: 5px;
+    margin-top: 13px;
+    border-radius: 5px;
+}
+.mbtiItem:hover {
+    background: buttonGrey;
+}

@@ -27,6 +27,10 @@
     font-weight: bold;
     margin: 10px 0 20px;
 }
+.heartIcon {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
 
 .scoreBox {
     display: flex;

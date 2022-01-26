@@ -9,3 +9,6 @@
     height: 35px;
     cursor: pointer;
 }
+.mbtiLink:hover {
+    font-weight: bold;
+}

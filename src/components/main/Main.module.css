@@ -1,5 +1,13 @@
 @value fontTitle, titleBold from "../../common/fontSize.css";
-@value lightGrey from  "../../common/colors.css";
+@value lightGrey, black from  "../../common/colors.css";
+.modalBack {
+    background: #2b2a27;
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
 .main {
     display: flex;
     flex-direction: column;

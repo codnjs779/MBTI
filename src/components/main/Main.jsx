@@ -7,6 +7,7 @@ import InfoModal from "../infoModal/InfoModal";
 import styles from "./Main.module.css";
 const Main = () => {
     const [modalState, setModalState] = useState(false);
+
     const startNavigate = useNavigate();
     const onClick = () => {
         modalState === false ? setModalState(true) : setModalState(false);
@@ -14,12 +15,17 @@ const Main = () => {
     const onStartBtn = () => {
         startNavigate("/me");
     };
+    const offmodal = () => {
+        setModalState(false);
+    };
     return (
         <>
+            {" "}
+            {modalState === true ? <div onClick={offmodal} className={styles.modalBack}></div> : null}
+            {modalState === true ? <InfoModal /> : null}
             <div onClick={onClick} className={styles.infoButton}>
                 <i className="fas fa-info-circle"></i>
             </div>
-            {modalState === true ? <InfoModal /> : null}
             <section className={styles.main}>
                 <div className={styles.title}>우리의 모든 것</div>
                 <p className={styles.content}>mbti 별자리 띠 혈액형 모든 궁합을 한번에 확인해보세요!</p>

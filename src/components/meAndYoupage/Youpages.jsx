@@ -1,15 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import BlackButton from "../blackBtn/BlackButton";
 import MbtiLinkBtn from "../mbtiLinkBtn/MbtiLinkBtn";
-import { useNavigate } from "react-router-dom";
 import styles from "./Mepage.module.css";
-import BloodModal from "../modal/blood/BloodModal";
-import MbtiModal from "../modal/mbti/MbtiModal";
-
-const Mepage = () => {
-    const [bloodModal, setbloodModal] = useState(false);
-    const [mbtiModal, setMbtiModal] = useState(false);
-    // const [userBlood, setuserBlood] = useState();
+const Youpage = () => {
     const resultNavigate = useNavigate();
     const nextPage = () => {
         resultNavigate("/result");
@@ -18,15 +12,6 @@ const Mepage = () => {
     const onMbtiLink = () => {
         window.open("https://www.16personalities.com/ko/%EB%AC%B4%EB%A3%8C-%EC%84%B1%EA%B2%A9-%EC%9C%A0%ED%98%95-%EA%B2%80%EC%82%AC", "_blank");
     };
-    const onBloodModal = () => {
-        setbloodModal(!bloodModal);
-    };
-    const onMbtiModal = () => {
-        setMbtiModal(!mbtiModal);
-    };
-    // const userBloodWriter = (blood) => {
-    //     setuserBlood(blood);
-    // };
 
     return (
         <div className={styles.mepage}>
@@ -60,24 +45,22 @@ const Mepage = () => {
 
                 <div>
                     <label>혈액형</label>
-                    <input onClick={onBloodModal} type="text" placeholder="혈액형을 선택해주세요" />
+                    <input type="text" placeholder="혈액형을 선택해주세요" />
                 </div>
-                {bloodModal === true ? <BloodModal /> : null}
 
                 <div>
                     <label>MBTI</label>
-                    <input onClick={onMbtiModal} type="text" placeholder="MBTI를 선택해주세요" />
+                    <input type="text" placeholder="MBTI를 선택해주세요" />
                 </div>
-                {mbtiModal === true ? <MbtiModal /> : null}
                 <span className={styles.buttonLinkBox}>
                     <MbtiLinkBtn onClick={onMbtiLink} />
                 </span>
             </form>
             <div className={styles.buttonNextBox}>
-                <BlackButton onClick={nextPage} buttonTxt="다음으로" />
+                <BlackButton onClick={nextPage} buttonTxt="결과보기" />
             </div>
         </div>
     );
 };
 
-export default Mepage;
+export default Youpage;
