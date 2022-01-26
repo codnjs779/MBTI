@@ -1,0 +1,11 @@
+@value buttonGrey from  "../../common/colors.css";
+@value radiusMiniBtn from "../../common/size.css";
+
+.mbtiLink {
+    background-color: buttonGrey;
+    border: none;
+    border-radius: radiusMiniBtn;
+    width: 120px;
+    height: 35px;
+    cursor: pointer;
+}
