@@ -1,0 +1,8 @@
+.app {
+    background-image: url("./images/bg.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 375px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
