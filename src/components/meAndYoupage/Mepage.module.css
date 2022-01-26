@@ -1,0 +1,61 @@
+@value fontTitle, titleBold from "../../common/fontSize.css";
+@value titleTopMargin,bottomMargin, radiusMiniBtn,leftspace from "../../common/size.css";
+@value white, formboxShodow, buttonGrey from "../../common/colors.css";
+.mepage {
+    width: 100%;
+}
+.title {
+    font-size: fontTitle;
+    font-weight: titleBold;
+    padding-top: titleTopMargin;
+    margin-left: leftspace;
+}
+
+.formBox {
+    background-color: white;
+    width: 90%;
+    height: 600px;
+    margin: auto;
+    margin-top: titleTopMargin;
+    box-shadow: formboxShodow;
+    border-radius: radiusMiniBtn;
+    padding: leftspace;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.formBox div::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 1px;
+    background-color: buttonGrey;
+    transform: translateY(0.5em);
+    margin: auto;
+}
+.formBox label {
+    display: inline-block;
+    width: 25%;
+    font-weight: bold;
+    text-align: center;
+}
+.formBox input {
+    width: 65%;
+    border: none;
+    padding-bottom: radiusMiniBtn;
+}
+
+.gender input {
+    width: 20px;
+}
+.buttonLinkBox,
+.buttonNextBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonNextBox {
+    margin-top: titleTopMargin;
+}

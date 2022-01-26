@@ -1,0 +1,42 @@
+@value fontTitle, titleBold from "../../common/fontSize.css";
+@value lightGrey from  "../../common/colors.css";
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.infoButton {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.buttonBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: fontTitle;
+    font-weight: titleBold;
+}
+
+.content {
+    width: 70%;
+    text-align: center;
+    color: lightGrey;
+}
+
+.heartImg {
+    width: 280px;
+}
+.users {
+    margin-bottom: 50px;
+}
