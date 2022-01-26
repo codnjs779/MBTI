@@ -1,0 +1,19 @@
+@value buttonGrey,  black from "../../common/colors.css";
+@value buttonFont, titleBold from "../../common/fontSize.css";
+@value bottomMargin, radiusBigBtn from "../../common/size.css";
+
+.greybutton {
+    width: 90%;
+    height: 50px;
+    border-radius: radiusBigBtn;
+    border: none;
+    display: block;
+    cursor: pointer;
+    background-color: buttonGrey;
+    color: black;
+    font-size: buttonFont;
+    margin-bottom: bottomMargin;
+}
+.greybutton:hover {
+    font-weight: titleBold;
+}

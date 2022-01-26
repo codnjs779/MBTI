@@ -1,0 +1,17 @@
+@value black, yellow from "../../common/colors.css";
+@value buttonFont, titleBold from "../../common/fontSize.css";
+@value bottomMargin, radiusBigBtn from "../../common/size.css";
+.yellowbutton {
+    width: 90%;
+    height: 50px;
+    border-radius: radiusBigBtn;
+    border: none;
+    display: block;
+    cursor: pointer;
+    background-color: yellow;
+    font-size: buttonFont;
+    margin-bottom: bottomMargin;
+}
+.yellowbutton:hover {
+    font-weight: titleBold;
+}

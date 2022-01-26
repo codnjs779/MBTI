@@ -1,0 +1,18 @@
+@value black, white from "../../common/colors.css";
+@value buttonFont, titleBold from "../../common/fontSize.css";
+@value bottomMargin, radiusBigBtn from "../../common/size.css";
+.blackbutton {
+    width: 90%;
+    height: 50px;
+    border-radius: radiusBigBtn;
+    border: none;
+    display: block;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-size: buttonFont;
+    margin-bottom: bottomMargin;
+}
+.blackbutton:hover {
+    font-weight: titleBold;
+}
