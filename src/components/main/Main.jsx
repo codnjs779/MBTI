@@ -5,7 +5,7 @@ import GreyButton from "../button/greyBtn/GreyButton";
 import heart from "../../images/heart.png";
 import InfoModal from "../infoModal/InfoModal";
 import styles from "./Main.module.css";
-const Main = () => {
+const Main = ({ userCount }) => {
     const [modalState, setModalState] = useState(false);
 
     const startNavigate = useNavigate();
@@ -31,7 +31,7 @@ const Main = () => {
                 <p className={styles.content}>mbti 별자리 띠 혈액형 모든 궁합을 한번에 확인해보세요!</p>
                 <img className={styles.heartImg} src={heart} alt="" />
                 <div className={styles.users}>
-                    현재까지 <strong>00명</strong>이 참여했어요
+                    현재까지 <strong>{userCount}명</strong>이 참여했어요
                 </div>
             </section>
             <section className={styles.buttonBox}>
