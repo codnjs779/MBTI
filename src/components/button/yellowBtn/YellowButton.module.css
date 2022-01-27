@@ -1,6 +1,6 @@
-@value black, yellow from "../../common/colors.css";
-@value buttonFont, titleBold from "../../common/fontSize.css";
-@value bottomMargin, radiusBigBtn from "../../common/size.css";
+@value black, yellow from "../../../common/colors.css";
+@value buttonFont, titleBold from "../../../common/fontSize.css";
+@value bottomMargin, radiusBigBtn from "../../../common/size.css";
 .yellowbutton {
     width: 90%;
     height: 50px;

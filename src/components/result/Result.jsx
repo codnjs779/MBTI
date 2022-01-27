@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Result.module.css";
 import img from "../../images/sample.PNG";
-import BlackButton from "../blackBtn/BlackButton";
-import YellowButton from "../yellowBtn/YellowButton";
+import BlackButton from "../button/blackBtn/BlackButton";
+import YellowButton from "../button/yellowBtn/YellowButton";
 import { useNavigate } from "react-router-dom";
 const Result = () => {
     const retryNavigate = useNavigate();

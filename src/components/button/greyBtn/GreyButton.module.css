@@ -1,6 +1,6 @@
-@value buttonGrey,  black from "../../common/colors.css";
-@value buttonFont, titleBold from "../../common/fontSize.css";
-@value bottomMargin, radiusBigBtn from "../../common/size.css";
+@value buttonGrey,  black from "../../../common/colors.css";
+@value buttonFont, titleBold from "../../../common/fontSize.css";
+@value bottomMargin, radiusBigBtn from "../../../common/size.css";
 
 .greybutton {
     width: 90%;

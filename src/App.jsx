@@ -22,7 +22,6 @@ const App = () => {
             born: "",
         },
     });
-    console.log("userData", userData);
     const dataFile = (user, id) => {
         setUserData((userData) => {
             const newObj = { ...userData };

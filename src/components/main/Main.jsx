@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import BlackButton from "../blackBtn/BlackButton";
-import GreyButton from "../greyBtn/GreyButton";
+import BlackButton from "../button/blackBtn/BlackButton";
+import GreyButton from "../button/greyBtn/GreyButton";
 import heart from "../../images/heart.png";
 import InfoModal from "../infoModal/InfoModal";
 import styles from "./Main.module.css";

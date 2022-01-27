@@ -1,5 +1,5 @@
-@value buttonGrey from  "../../common/colors.css";
-@value radiusMiniBtn from "../../common/size.css";
+@value buttonGrey from  "../../../common/colors.css";
+@value radiusMiniBtn from "../../../common/size.css";
 
 .mbtiLink {
     background-color: buttonGrey;

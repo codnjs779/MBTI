@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-import BlackButton from "../blackBtn/BlackButton";
-import MbtiLinkBtn from "../mbtiLinkBtn/MbtiLinkBtn";
+import BlackButton from "../button/blackBtn/BlackButton";
+import MbtiLinkBtn from "../button/mbtiLinkBtn/MbtiLinkBtn";
 import { useNavigate } from "react-router-dom";
 import styles from "./Mepage.module.css";
 import BloodModal from "../modal/blood/BloodModal";
@@ -9,7 +9,7 @@ import MbtiModal from "../modal/mbti/MbtiModal";
 const Mepage = ({ dataFile }) => {
     const [bloodModal, setbloodModal] = useState({ state: false, bloodPick: "" });
     const [mbtiModal, setMbtiModal] = useState({ state: false, mbtiPick: "" });
-    const [gender, setGender] = useState();
+    const [genderPick, setGender] = useState();
 
     const NextNavigate = useNavigate();
 
@@ -17,19 +17,26 @@ const Mepage = ({ dataFile }) => {
     const nameRef = useRef();
     const birthRef = useRef();
 
-    const nextPage = () => {
+    const nextPage = (e) => {
+        e.preventDefault();
+
         const me = {
             name: nameRef.current.value || "",
-            gender: gender || "",
+            gender: genderPick || "",
             birth: birthRef.current.value || "",
             blood: bloodModal.bloodPick || "",
             mbti: mbtiModal.mbtiPick || "",
         };
+        const { name, gender, birth, blood, mbti } = me;
 
-        const id = "me";
-        formRef.current.value = "";
-        dataFile(me, id);
-        NextNavigate("/you");
+        if (name === "" || gender === "" || birth === "" || blood === "" || mbti === "") {
+            alert("빈칸을 모두 입력해주세요!");
+        } else {
+            NextNavigate("/you");
+            const id = "me";
+            formRef.current.value = "";
+            dataFile(me, id);
+        }
     };
 
     const onMbtiLink = () => {
@@ -97,7 +104,7 @@ const Mepage = ({ dataFile }) => {
 
                 <div>
                     <label>생년월일</label>
-                    <input ref={birthRef} type="text" placeholder="8자리를 입력해주세요" />
+                    <input ref={birthRef} type="text" maxLength="8" placeholder="8자리를 입력해주세요" />
                 </div>
 
                 <div>
