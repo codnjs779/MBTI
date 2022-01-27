@@ -1,12 +1,17 @@
 import React from "react";
 import styles from "./BloodModal.module.css";
-const BloodModal = () => {
-    const bloodBox = ["A형", "B형", "C형", "D형"];
-    // const userBlood = (blood) => {
-    //     userBloodWriter(blood);
-    // };
+const BloodModal = ({ onBloodPickController }) => {
+    const bloodBox = ["A", "B", "C", "D"];
+    const userBlood = (blood) => {
+        const userpick = blood;
+        onBloodPickController(userpick);
+    };
     const test = bloodBox.map((blood) => {
-        return <li className={styles.bloodItem}>{blood}</li>;
+        return (
+            <li onClick={() => userBlood(blood)} className={styles.bloodItem}>
+                {blood}
+            </li>
+        );
     });
     return <ul className={styles.bloodSet}>{test}</ul>;
 };

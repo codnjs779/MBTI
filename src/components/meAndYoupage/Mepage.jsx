@@ -7,24 +7,23 @@ import BloodModal from "../modal/blood/BloodModal";
 import MbtiModal from "../modal/mbti/MbtiModal";
 
 const Mepage = ({ dataFile }) => {
-    const [bloodModal, setbloodModal] = useState(false);
-    const [mbtiModal, setMbtiModal] = useState(false);
+    const [bloodModal, setbloodModal] = useState({ state: false, bloodPick: "" });
+    const [mbtiModal, setMbtiModal] = useState({ state: false, mbtiPick: "" });
     const [gender, setGender] = useState();
+
     const NextNavigate = useNavigate();
 
     const formRef = useRef();
     const nameRef = useRef();
     const birthRef = useRef();
-    const bloodRef = useRef();
-    const mbtiRef = useRef();
 
     const nextPage = () => {
         const me = {
             name: nameRef.current.value || "",
             gender: gender || "",
             birth: birthRef.current.value || "",
-            blood: bloodRef.current.value || "",
-            mbti: mbtiRef.current.value || "",
+            blood: bloodModal.bloodPick || "",
+            mbti: mbtiModal.mbtiPick || "",
         };
 
         const id = "me";
@@ -38,16 +37,39 @@ const Mepage = ({ dataFile }) => {
     };
 
     const onBloodModal = () => {
-        setbloodModal(!bloodModal);
+        setbloodModal((bloodModal) => {
+            const newBlood = { ...bloodModal };
+            newBlood.state = !bloodModal.state;
+            return newBlood;
+        });
+    };
+    const onMbtiModal = () => {
+        setMbtiModal((mbtiModal) => {
+            const newMbti = { ...mbtiModal };
+            newMbti.state = !mbtiModal.state;
+            return newMbti;
+        });
     };
 
-    const onMbtiModal = () => {
-        setMbtiModal(!mbtiModal);
-    };
     const onGender = (e) => {
-        console.log(e.target.value, "gender");
         setGender(e.target.value);
     };
+    const onBloodPickController = (userpick) => {
+        setbloodModal((bloodModal) => {
+            let newBlood = { ...bloodModal };
+            newBlood = { state: !bloodModal.state, bloodPick: userpick };
+            return newBlood;
+        });
+    };
+
+    const onMbtiPickController = (userpick) => {
+        setMbtiModal((mbtiModal) => {
+            let newMbti = { ...mbtiModal };
+            newMbti = { state: !mbtiModal.state, mbtiPick: userpick };
+            return newMbti;
+        });
+    };
+
     return (
         <div className={styles.mepage}>
             <div className={styles.title}>나의 정보를 입력해주세요</div>
@@ -80,15 +102,23 @@ const Mepage = ({ dataFile }) => {
 
                 <div>
                     <label>혈액형</label>
-                    <input ref={bloodRef} onClick={onBloodModal} type="text" placeholder="혈액형을 선택해주세요" />
+                    <input
+                        value={bloodModal.bloodPick}
+                        className={styles.readOnlyInput}
+                        onClick={onBloodModal}
+                        onChange={onBloodPickController}
+                        type="text"
+                        placeholder="혈액형을 선택해주세요"
+                        readOnly
+                    />
                 </div>
-                {bloodModal === true ? <BloodModal /> : null}
+                {bloodModal.state === true ? <BloodModal onBloodPickController={onBloodPickController} /> : null}
 
                 <div>
                     <label>MBTI</label>
-                    <input ref={mbtiRef} onClick={onMbtiModal} type="text" placeholder="MBTI를 선택해주세요" />
+                    <input value={mbtiModal.mbtiPick} className={styles.readOnlyInput} onClick={onMbtiModal} onChange={onMbtiPickController} type="text" placeholder="MBTI를 선택해주세요" readOnly />
                 </div>
-                {mbtiModal === true ? <MbtiModal /> : null}
+                {mbtiModal.state === true ? <MbtiModal onMbtiPickController={onMbtiPickController} /> : null}
 
                 <span className={styles.buttonLinkBox}>
                     <MbtiLinkBtn onClick={onMbtiLink} />
