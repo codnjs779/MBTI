@@ -5,6 +5,7 @@ import GreyButton from "../button/greyBtn/GreyButton";
 import heart from "../../images/heart.png";
 import InfoModal from "../infoModal/InfoModal";
 import styles from "./Main.module.css";
+
 const Main = ({ userCount }) => {
     const [modalState, setModalState] = useState(false);
 
@@ -18,6 +19,7 @@ const Main = ({ userCount }) => {
     const offmodal = () => {
         setModalState(false);
     };
+
     return (
         <>
             {" "}
