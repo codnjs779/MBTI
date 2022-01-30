@@ -4,7 +4,8 @@ import img from "../../images/sample.PNG";
 import BlackButton from "../button/blackBtn/BlackButton";
 import YellowButton from "../button/yellowBtn/YellowButton";
 import { useNavigate } from "react-router-dom";
-const Result = () => {
+const Result = ({ dataApi }) => {
+    console.log(`this is restyle`, dataApi());
     const retryNavigate = useNavigate();
 
     const retryTest = () => {

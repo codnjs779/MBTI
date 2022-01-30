@@ -7,8 +7,6 @@ import Result from "./components/result/Result";
 import { Routes, Route } from "react-router-dom";
 
 const App = ({ dataApi }) => {
-    const [userCount, setUserCount] = useState();
-
     const [userData, setUserData] = useState({
         me: {
             name: "",
@@ -38,17 +36,13 @@ const App = ({ dataApi }) => {
         });
     };
 
-    useEffect(() => {
-        dataApi.countUser(setUserCount);
-    }, []);
-
     return (
         <div className={styles.app}>
             <Routes>
-                <Route path="/" element={<Main userCount={userCount} />} />
+                <Route path="/" element={<Main dataApi={dataApi.countUser} />} />
                 <Route path="/me" element={<Mepage meData={userData.me} dataFile={dataFile} />} />
                 <Route path="/you" element={<Youpage youData={userData.you} dataFile={dataFile} />} />
-                <Route path="/result" element={<Result />} />
+                <Route path="/result" element={<Result dataApi={dataApi.testResult} />} />
             </Routes>
         </div>
     );

@@ -12,6 +12,10 @@ class DataAPI {
             })
             .catch((err) => console.log(`err`, err));
     }
+
+    testResult() {
+        console.log("test");
+    }
 }
 
 export default DataAPI;

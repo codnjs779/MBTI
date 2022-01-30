@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import BlackButton from "../button/blackBtn/BlackButton";
 import GreyButton from "../button/greyBtn/GreyButton";
@@ -6,7 +6,8 @@ import heart from "../../images/heart.png";
 import InfoModal from "../infoModal/InfoModal";
 import styles from "./Main.module.css";
 
-const Main = ({ userCount }) => {
+const Main = ({ dataApi }) => {
+    const [userCount, setUserCount] = useState();
     const [modalState, setModalState] = useState(false);
 
     const startNavigate = useNavigate();
@@ -19,6 +20,10 @@ const Main = ({ userCount }) => {
     const offmodal = () => {
         setModalState(false);
     };
+    useEffect(() => {
+        dataApi(setUserCount);
+        console.log("this is app");
+    }, [dataApi]);
 
     return (
         <>
