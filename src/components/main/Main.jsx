@@ -6,7 +6,7 @@ import heart from "../../images/heart.png";
 import InfoModal from "../infoModal/InfoModal";
 import styles from "./Main.module.css";
 
-const Main = ({ dataApi }) => {
+const Main = ({ dataCountApi }) => {
     const [userCount, setUserCount] = useState();
     const [modalState, setModalState] = useState(false);
 
@@ -21,9 +21,8 @@ const Main = ({ dataApi }) => {
         setModalState(false);
     };
     useEffect(() => {
-        dataApi(setUserCount);
-        console.log("this is app");
-    }, [dataApi]);
+        dataCountApi(setUserCount);
+    }, [dataCountApi]);
 
     return (
         <>

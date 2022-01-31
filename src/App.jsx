@@ -39,10 +39,10 @@ const App = ({ dataApi }) => {
     return (
         <div className={styles.app}>
             <Routes>
-                <Route path="/" element={<Main dataApi={dataApi.countUser} />} />
+                <Route path="/" element={<Main dataCountApi={dataApi.countUser} />} />
                 <Route path="/me" element={<Mepage meData={userData.me} dataFile={dataFile} />} />
                 <Route path="/you" element={<Youpage youData={userData.you} dataFile={dataFile} />} />
-                <Route path="/result" element={<Result dataApi={dataApi.testResult} />} />
+                <Route path="/result" element={<Result dataResultApi={dataApi.testResult} userData={userData} />} />
             </Routes>
         </div>
     );

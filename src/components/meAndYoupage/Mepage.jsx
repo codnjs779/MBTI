@@ -29,14 +29,14 @@ const Mepage = ({ dataFile }) => {
         };
         const { name, gender, birth, blood, mbti } = me;
 
-        if (name === "" || gender === "" || birth === "" || blood === "" || mbti === "") {
-            alert("빈칸을 모두 입력해주세요!");
-        } else {
-            NextNavigate("/you");
-            const id = "me";
-            formRef.current.value = "";
-            dataFile(me, id);
-        }
+        // if (name === "" || gender === "" || birth === "" || blood === "" || mbti === "") {
+        //     alert("빈칸을 모두 입력해주세요!");
+        // } else {
+        NextNavigate("/you");
+        const id = "me";
+        formRef.current.value = "";
+        dataFile(me, id);
+        // }
     };
 
     const onMbtiLink = () => {

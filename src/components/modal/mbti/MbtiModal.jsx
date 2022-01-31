@@ -9,7 +9,7 @@ const MbtiModal = ({ onMbtiPickController }) => {
     };
     const mbtiList = mbti.map((mbtiItem) => {
         return (
-            <li className={styles.mbtiItem} onClick={() => usermbti(mbtiItem)}>
+            <li key={mbtiItem} className={styles.mbtiItem} onClick={() => usermbti(mbtiItem)}>
                 {mbtiItem}
             </li>
         );

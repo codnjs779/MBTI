@@ -1,77 +1,107 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Result.module.css";
-import img from "../../images/sample.PNG";
 import BlackButton from "../button/blackBtn/BlackButton";
 import YellowButton from "../button/yellowBtn/YellowButton";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
-const Result = ({ dataApi }) => {
-    console.log(`this is restyle`, dataApi());
+
+const Result = ({ dataResultApi, userData }) => {
+    const [result, setResult] = useState();
+    const [loading, setLoading] = useState(false);
+
     const retryNavigate = useNavigate();
 
     const retryTest = () => {
         retryNavigate("/");
     };
+
+    useEffect(() => {
+        dataResultApi(setLoading, userData, setResult);
+    }, []);
+    console.log("result", result);
+
+    // let { blood, constellation, mbti, zodiacSign } = result.content;
+    // const { bloodImg, constellationImg, mbtiImg, zodiacSignImg } = result.img;
+    // const { bloodScore, constellationScore, mbtiScore, zodiacSignScore } = result.individuallyScore;
+    // const { meName, youName } = result.name;
+    // const score = result.score;
+
+    // if (result !== undefined) {
+    //     let mbtiChange = mbti.replaceAll("me", meName);
+    //     const mbtiResultChange = mbtiChange.replaceAll("you", youName);
+    //     mbti = mbtiResultChange;
+
+    //     let bloodChange = blood.replaceAll("me", meName);
+    //     const bloodResultChange = bloodChange.replaceAll("you", youName);
+    //     blood = bloodResultChange;
+    // }
+
     return (
         <div className={styles.resultBox}>
-            <section className={styles.scoreSection}>
-                <div className={styles.title}>나와 상대의 궁합은</div>
-                <div className={styles.score}>00점</div>
-
-                <div className={styles.heartIcon}>
-                    <i className="fas fa-heart"></i>
-                </div>
-                <div className={styles.container}>
-                    <div className={styles.progress}>
-                        <div className={styles.progressBar}>
-                            <div className={styles.circle}></div>
+            {result && <div>{result}</div>}
+            {result && (
+                <>
+                    {/* <section className={styles.scoreSection}>
+                        <div className={styles.title}>나와 상대의 궁합은</div>
+                        <div className={styles.score}>{score}점</div>
+                        {!loading && <button>{"로딩중" || "로딩끝"}</button>}
+                        <div className={styles.heartIcon}>
+                            <i className="fas fa-heart"></i>
                         </div>
-                    </div>
-                </div>
+                        <div className={styles.container}>
+                            <div className={styles.progress}>
+                                <div className={styles.progressBar}>
+                                    <div className={styles.circle}></div>
+                                </div>
+                            </div>
+                        </div>
 
-                <div className={styles.scoreBox}>
-                    <div>
-                        <img src={img} alt="" />
-                        <div>별자리</div>
-                        <div>00점</div>
-                    </div>
+                        <div className={styles.scoreBox}>
+                            <div>
+                                <img src={bloodImg} alt="혈액형" />
+                                <div>혈액형</div>
+                                <div>{bloodScore}점</div>
+                            </div>
 
-                    <div>
-                        <img src={img} alt="" />
-                        <div>12지신</div>
-                        <div>00점</div>
-                    </div>
+                            <div>
+                                <img src={constellationImg} alt="12지신" />
+                                <div>12지신</div>
+                                <div>{constellationScore}점</div>
+                            </div>
 
-                    <div>
-                        <img src={img} alt="" />
-                        <div>혈액형</div>
-                        <div>00점</div>
-                    </div>
+                            <div>
+                                <img src={mbtiImg} alt="mbti" />
+                                <div>MBTI</div>
+                                <div>{mbtiScore}점</div>
+                            </div>
 
-                    <div>
-                        <img src={img} alt="" />
-                        <div>MBTI</div>
-                        <div>00점</div>
-                    </div>
-                </div>
-            </section>
+                            <div>
+                                <img src={zodiacSignImg} alt="별자리" />
+                                <div>별자리</div>
+                                <div>{zodiacSignScore}점</div>
+                            </div>
+                        </div>
+                    </section>
 
-            <section className={styles.result}>
-                <div className={styles.title}>결과 해석</div>
-                <ul className={styles.resultContents}>
-                    <li>결과</li>
-                    <li>결과</li>
-                    <li>결과</li>
-                    <li>결과</li>
-                </ul>
-            </section>
-            <section className={styles.buttonBox}>
-                <div className={styles.retry}>
-                    <BlackButton onClick={retryTest} buttonTxt="다시하기" />
-                </div>
-                <div className={styles.share}>
-                    <YellowButton buttonTxt="결과 링크 공유하기" />
-                </div>
-            </section>
+                    <section className={styles.result}>
+                        <div className={styles.title}>결과 해석</div>
+                        <ul className={styles.resultContents}>
+                            <li>{blood}</li>
+                            <li>{constellation}</li>
+                            <li>{mbti}</li>
+                            <li>{zodiacSign}</li>
+                        </ul>
+                    </section>
+                    <section className={styles.buttonBox}>
+                        <div className={styles.retry}>
+                            <BlackButton onClick={retryTest} buttonTxt="다시하기" />
+                        </div>
+                        <div className={styles.share}>
+                            <YellowButton buttonTxt="결과 링크 공유하기" />
+                        </div>
+                    </section> */}
+                </>
+            )}
         </div>
     );
 };
