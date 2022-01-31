@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./BloodModal.module.css";
-const BloodModal = ({ onBloodPickController }) => {
+const BloodModal = memo(({ onBloodPickController }) => {
     const bloodBox = ["A", "B", "O", "AB"];
 
     const userBlood = (blood) => {
@@ -16,6 +16,6 @@ const BloodModal = ({ onBloodPickController }) => {
         );
     });
     return <ul className={styles.bloodSet}>{test}</ul>;
-};
+});
 
 export default BloodModal;

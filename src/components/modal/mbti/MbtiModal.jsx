@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./MbtiModal.module.css";
 
-const MbtiModal = ({ onMbtiPickController }) => {
+const MbtiModal = memo(({ onMbtiPickController }) => {
     const mbti = ["ENFJ", "ENFP", "ENTJ", "ENTP", "ESFJ", "ESFP", "ESTJ", " ESTP", "INFJ", "INFP", "INTJ", "INTP", "ISFJ", "ISFP", "ISTJ", "ISTP"];
     const usermbti = (mbtiItem) => {
         const userpick = mbtiItem;
@@ -15,6 +15,5 @@ const MbtiModal = ({ onMbtiPickController }) => {
         );
     });
     return <ul className={styles.mbtiSet}>{mbtiList}</ul>;
-};
-
+});
 export default MbtiModal;

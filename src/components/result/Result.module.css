@@ -1,5 +1,5 @@
-@value buttonGrey,formboxShodow white from "../../common/colors.css";
-@value bottomMargin, leftspace,radiusBigBtn from "../../common/size.css";
+@value buttonGrey,formboxShodow,white,pink from "../../common/colors.css";
+@value bottomMargin, leftspace,radiusBigBtn, radiusMiniBtn from "../../common/size.css";
 
 .resultBox {
     display: flex;
@@ -55,22 +55,21 @@
     background: white;
     border-radius: 50%;
 }
-.container {
+
+.progress {
     width: 90%;
     text-align: center;
+    background: none;
 }
-.progress {
-    height: 12px;
-    border-radius: 30px;
+.progress::-webkit-progress-bar {
     background: buttonGrey;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+    border-radius: radiusMiniBtn;
 }
-.progressBar {
-    height: inherit;
-    border-radius: 30px;
-    width: 85%;
-    background: #3a3a3a;
+.progress::-webkit-progress-value {
+    background: pink;
+    border-radius: radiusMiniBtn;
 }
+
 .resultContents {
     list-style: none;
     padding: 0;

@@ -3,6 +3,10 @@ import styles from "./Result.module.css";
 import BlackButton from "../button/blackBtn/BlackButton";
 import YellowButton from "../button/yellowBtn/YellowButton";
 import { useNavigate } from "react-router-dom";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+
+const shareURL = "https://chemistry-test.co.kr";
+
 const ResultView = (result) => {
     let { blood, constellation, mbti, zodiacSign } = result.result.content;
     const { bloodImg, constellationImg, mbtiImg, zodiacSignImg } = result.result.img;
@@ -14,6 +18,9 @@ const ResultView = (result) => {
 
     const retryTest = () => {
         retryNavigate("/");
+    };
+    const onShareBtn = () => {
+        alert("링크복사가 완료되었습니다!");
     };
 
     if (result !== "") {
@@ -31,15 +38,8 @@ const ResultView = (result) => {
                 <div className={styles.title}>나와 상대의 궁합은</div>
                 <div className={styles.score}>{score}점</div>
 
-                <div className={styles.heartIcon}>
-                    <i className="fas fa-heart"></i>
-                </div>
-                <div className={styles.container}>
-                    <div className={styles.progress}>
-                        <div className={styles.progressBar}>
-                            <div className={styles.circle}></div>
-                        </div>
-                    </div>
+                <div>
+                    <progress className={styles.progress} max="100" value={score} />
                 </div>
 
                 <div className={styles.scoreBox}>
@@ -82,9 +82,11 @@ const ResultView = (result) => {
                 <div className={styles.retry}>
                     <BlackButton onClick={retryTest} buttonTxt="다시하기" />
                 </div>
-                <div className={styles.share}>
-                    <YellowButton buttonTxt="결과 링크 공유하기" />
-                </div>
+                <CopyToClipboard text={shareURL}>
+                    <div className={styles.share}>
+                        <YellowButton onClick={onShareBtn} buttonTxt="링크 공유하기" />
+                    </div>
+                </CopyToClipboard>
             </section>
         </div>
     );

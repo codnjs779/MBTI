@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+
 import BlackButton from "../button/blackBtn/BlackButton";
 import GreyButton from "../button/greyBtn/GreyButton";
 import heart from "../../images/heart.png";
 import InfoModal from "../infoModal/InfoModal";
 import styles from "./Main.module.css";
+
+const shareURL = "https://chemistry-test.co.kr";
 
 const Main = ({ dataCountApi }) => {
     const [userCount, setUserCount] = useState();
@@ -19,6 +23,10 @@ const Main = ({ dataCountApi }) => {
     };
     const offmodal = () => {
         setModalState(false);
+    };
+    const onShareBtn = () => {
+        alert("링크복사가 완료되었습니다!");
+        console.log("eje");
     };
     useEffect(() => {
         dataCountApi(setUserCount);
@@ -42,7 +50,10 @@ const Main = ({ dataCountApi }) => {
             </section>
             <section className={styles.buttonBox}>
                 <BlackButton onClick={onStartBtn} buttonTxt="시작하기" />
-                <GreyButton buttonTxt="테스트 공유" />
+
+                <CopyToClipboard text={shareURL}>
+                    <GreyButton buttonTxt="테스트 공유" onClick={onShareBtn} />
+                </CopyToClipboard>
             </section>
         </>
     );
