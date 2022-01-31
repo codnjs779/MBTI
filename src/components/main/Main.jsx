@@ -44,9 +44,12 @@ const Main = ({ dataCountApi }) => {
                 <div className={styles.title}>우리의 모든 것</div>
                 <p className={styles.content}>mbti 별자리 띠 혈액형 모든 궁합을 한번에 확인해보세요!</p>
                 <img className={styles.heartImg} src={heart} alt="" />
-                <div className={styles.users}>
-                    현재까지 <strong>{userCount}명</strong>이 참여했어요
-                </div>
+
+                {userCount && (
+                    <div className={styles.users}>
+                        현재까지 <strong>{userCount}명</strong>이 참여했어요
+                    </div>
+                )}
             </section>
             <section className={styles.buttonBox}>
                 <BlackButton onClick={onStartBtn} buttonTxt="시작하기" />
