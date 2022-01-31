@@ -45,11 +45,9 @@ const Main = ({ dataCountApi }) => {
                 <p className={styles.content}>mbti 별자리 띠 혈액형 모든 궁합을 한번에 확인해보세요!</p>
                 <img className={styles.heartImg} src={heart} alt="" />
 
-                {userCount && (
-                    <div className={styles.users}>
-                        현재까지 <strong>{userCount}명</strong>이 참여했어요
-                    </div>
-                )}
+                <div className={styles.users}>
+                    현재까지 <strong>{userCount}명</strong>이 참여했어요
+                </div>
             </section>
             <section className={styles.buttonBox}>
                 <BlackButton onClick={onStartBtn} buttonTxt="시작하기" />
