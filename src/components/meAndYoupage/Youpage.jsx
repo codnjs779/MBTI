@@ -30,14 +30,14 @@ const Youpage = ({ dataFile }) => {
 
         const { name, gender, birth, blood, mbti } = you;
 
-        // if (name === "" || gender === "" || birth === "" || blood === "" || mbti === "") {
-        //     alert("빈칸을 모두 입력해주세요!");
-        // } else {
-        const id = "you";
-        formRef.current.value = "";
-        dataFile(you, id);
-        resultNavigate("/result");
-        // }
+        if (name === "" || gender === "" || birth === "" || blood === "" || mbti === "") {
+            alert("빈칸을 모두 입력해주세요!");
+        } else {
+            const id = "you";
+            formRef.current.value = "";
+            dataFile(you, id);
+            resultNavigate("/result");
+        }
     };
 
     const onMbtiLink = () => {
