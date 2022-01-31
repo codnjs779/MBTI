@@ -1,4 +1,4 @@
-@value buttonGrey from  "../../../common/colors.css";
+@value buttonGrey,black from  "../../../common/colors.css";
 @value radiusMiniBtn from "../../../common/size.css";
 
 .mbtiLink {
@@ -8,6 +8,7 @@
     width: 120px;
     height: 35px;
     cursor: pointer;
+    color: black;
 }
 .mbtiLink:hover {
     font-weight: bold;
