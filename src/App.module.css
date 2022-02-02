@@ -2,9 +2,11 @@
     background-image: url("./images/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 375px;
+
+    width: 410px;
+    max-width: 410px;
     min-height: 100vh;
-    margin: 0 auto;
+    margin: auto;
     position: relative;
     overflow: hidden;
 }
