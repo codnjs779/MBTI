@@ -41,6 +41,7 @@ yarn start
 📑Meinfo page 에서 정보 입력 후 App.js 에서 관리하는 dataFile()함수의 인자로 me 정보를 id값과 함께 넘겨준다. App.js에서는 받아온 값으로 state 정보를 수정함.
 정보 입력후 다음으로 버튼을 누르면 Youinfo page로 라우팅 처리 됨.
 </br>
+</br>
 📑Youinfo page 또한 meinfo와 같은 방식으로 데이터를 넘겨준다. 대신, App.js는 같은 함수를 재활용해서 정보를 받아오기 때문에 me일때와 you때 각각 해당하는 Obj에 정보를 넣어줄 수 있도록 조건문을 써줌.
 </br>
 
@@ -92,9 +93,7 @@ setResult(response.data.result);
 }, 2000);
 } catch (err) {
 console.log("err", err);
-}
-}
-}
+}}}
 
 ```
 </br>
@@ -110,4 +109,5 @@ console.log("err", err);
 amplify배포 환경 설정에서 환경변수를 따로 설정해 줘야함. 환경변수 설정 방법은 블로그에 포스팅 되어있음.
 </br>
 🔽
+
 ```
