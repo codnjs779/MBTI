@@ -13,7 +13,7 @@
 
 # API key
 .env
-.env.production
+
 
 # misc
 .DS_Store
