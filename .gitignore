@@ -12,8 +12,8 @@
 /build
 
 # API key
-.env.*
-
+.env
+.env.production
 
 # misc
 .DS_Store
