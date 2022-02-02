@@ -31,21 +31,9 @@ yarn start
 
 ## 화면 구성
 
-◾ Main page - 첫 시작 화면
+◾ Main page - 첫 시작 화면 -> ◾ Youinfo page - 상대 정보 -> ◾ Youinfo page - 상대 정보 -> ◾ Result page - 궁합 결과
 </br>
-<img src="https://user-images.githubusercontent.com/76987275/152198419-a8f78096-2ab1-4b80-b9bb-bdbf498cdfa4.PNG" width="300px" height="400px" alt/>
-</br>
-◾ Meinfo page - 본인 정보
-</br>
-![2](https://user-images.githubusercontent.com/76987275/152198434-b1cadc7d-246e-4a62-bf56-303f7a8036c3.PNG)
-</br>
-◾ Youinfo page - 상대 정보
-</br>
-![3](https://user-images.githubusercontent.com/76987275/152198430-f33f63bd-aad2-43b9-a679-1e28b1e52b5a.PNG)
-</br>
-◾ Result page - 궁합 결과
-</br>
-![4](https://user-images.githubusercontent.com/76987275/152198427-5eacb785-7655-4986-8519-d60c8f083555.PNG)
+![5](https://user-images.githubusercontent.com/76987275/152200277-07cf1ff6-7102-48a8-ab2e-06f70a13e58e.PNG)
 </br>
 
 ---
