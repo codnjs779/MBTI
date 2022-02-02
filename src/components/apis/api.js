@@ -13,13 +13,17 @@ class DataAPI {
             .catch((err) => console.log(`err`, err));
     }
 
-    async testResult(userData, setResult) {
+    async testResult(userData, setResult, setLoading) {
         try {
+            setLoading(true);
             const response = await axios.post(`${baseURL}/judgment`, {
                 me: userData.me,
                 you: userData.you,
             });
-            await setResult(response.data.result);
+            setTimeout(() => {
+                setLoading(false);
+                setResult(response.data.result);
+            }, 2000);
         } catch (err) {
             console.log("err", err);
         }

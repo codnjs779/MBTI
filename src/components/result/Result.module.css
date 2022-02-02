@@ -5,7 +5,30 @@
     display: flex;
     flex-direction: column;
 }
+.load {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 30px solid buttonGrey;
+    border-top: 30px solid pink;
+    animation: spin 2s linear infinite;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: 50%;
+    left: -25%;
+    right: -25%;
+}
 
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 .scoreSection,
 .result {
     background: white;
