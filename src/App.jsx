@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Main from "./components/main/Main";
 import styles from "./App.module.css";
 import Mepage from "./components/meAndYoupage/Mepage";
