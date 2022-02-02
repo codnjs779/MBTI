@@ -13,21 +13,19 @@ yarn add axios
 react-router-dom
 react-copy-to-clipboard
 yarn add @fortawesome/fontawesome-free
-
 ```
 
 ## Usage
 
 ```
 yarn start
-
 ```
 
 ## API
 
 REST API
 
-◾ GET: 참여인원
+◾ GET: 참여인원  
 ◾ POST: 나와 상대의 궁합 결과
 
 ## 컴포넌트
