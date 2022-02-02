@@ -12,7 +12,7 @@
 /build
 
 # API key
-.env.development
+.env
 .env.production
 
 # misc
