@@ -76,6 +76,8 @@ const [loading, setLoading] = useState(false);
 
 함수 인자로 App.js에서 관리하는 state(userData) = me, you 의 정보, post결과값을 담아줄 setResult, 로딩스피너를 위한 setLoading을 보내줌.
 </br>
+</br>
+</br>
 
 ## 💽api관리 js💽
 
@@ -100,6 +102,7 @@ console.log("err", err);
 </br>
 바로 데이터를 불러와서 화면에 출력해 주니까 빈 화면이 그대로 나왔다가 결과 값이 출력되는 문제가 생겨서 로딩스피너를 만들어서 2초 후에 결과값이 화면에 나오도록 함.
 </br>
+</br>
 
 ## 🔏보안🔏
 
@@ -113,4 +116,6 @@ console.log("err", err);
 🔔배포시 주의 할점! env는 ignore되었기 때문에 이대로 배포를 진행하면 api호출에 실패하기 떄문에
 amplify배포 환경 설정에서 환경변수를 따로 설정해 줘야함. 환경변수 설정 방법은 블로그에 포스팅 되어있음.
 </br>
-🔽
+</br>
+🔽</br>
+https://codnjs779.tistory.com/30
