@@ -84,11 +84,11 @@
     text-align: center;
     background: none;
 }
-.progress::-webkit-progress-bar {
+::-webkit-progress-bar {
     background: buttonGrey;
     border-radius: radiusMiniBtn;
 }
-.progress::-webkit-progress-value {
+::-webkit-progress-value {
     background: pink;
     border-radius: radiusMiniBtn;
 }

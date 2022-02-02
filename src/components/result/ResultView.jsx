@@ -8,7 +8,6 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 const shareURL = "https://chemistry-test.co.kr";
 
 const ResultView = (result) => {
-    console.log(`res`, result);
     let { blood, constellation, mbti, zodiacSign } = result.result.content;
     const { bloodImg, constellationImg, mbtiImg, zodiacSignImg } = result.result.img;
     const { bloodScore, constellationScore, mbtiScore, zodiacSignScore } = result.result.individuallyScore;

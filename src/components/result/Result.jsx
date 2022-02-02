@@ -10,8 +10,6 @@ const Result = ({ dataResultApi, userData }) => {
         dataResultApi(userData, setResult, setLoading);
     }, []);
 
-    console.log(`ddd`, result);
-
     return (
         <>
             {loading === true ? <div className={styles.load}></div> : null}

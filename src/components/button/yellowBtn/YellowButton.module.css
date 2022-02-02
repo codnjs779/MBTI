@@ -11,6 +11,7 @@
     background-color: yellow;
     font-size: buttonFont;
     margin-bottom: bottomMargin;
+    color: black;
 }
 .yellowbutton:hover {
     font-weight: titleBold;
