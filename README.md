@@ -22,21 +22,21 @@ yarn add @fortawesome/fontawesome-free
 yarn start
 ```
 
-## API
+## 📚API📚
 
 <strong>REST API</strong>
 
 ◾ GET: 참여인원  
 ◾ POST: 나와 상대의 궁합 결과
 
-## 화면 구성
+## 📜화면 구성📜
 
 ◾ Main page - 첫 시작 화면 -> ◾ Meinfo page - 본인 정보 -> ◾ Youinfo page - 상대 정보 -> ◾ Result page - 궁합 결과
 </br>
 ![5](https://user-images.githubusercontent.com/76987275/152200277-07cf1ff6-7102-48a8-ab2e-06f70a13e58e.PNG)
 </br>
 
-## 데이터의 흐름
+## 💨데이터의 흐름💨
 
 📑Meinfo page 에서 정보 입력 후 App.js 에서 관리하는 dataFile()함수의 인자로 me 정보를 id값과 함께 넘겨준다. App.js에서는 받아온 값으로 state 정보를 수정함.
 정보 입력후 다음으로 버튼을 누르면 Youinfo page로 라우팅 처리 됨.
