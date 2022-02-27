@@ -26,7 +26,6 @@ const Main = ({ dataCountApi }) => {
     };
     const onShareBtn = () => {
         alert("링크복사가 완료되었습니다!");
-        console.log("eje");
     };
     useEffect(() => {
         dataCountApi(setUserCount);
