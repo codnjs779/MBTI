@@ -8,7 +8,7 @@ const Result = ({ dataResultApi, userData }) => {
 
     useEffect(() => {
         dataResultApi(userData, setResult, setLoading);
-    }, []);
+    }, [dataResultApi, userData]);
 
     return (
         <>

@@ -8,20 +8,8 @@ import { Routes, Route } from "react-router-dom";
 
 const App = ({ dataApi }) => {
     const [userData, setUserData] = useState({
-        me: {
-            name: "",
-            gender: "",
-            blood: "",
-            mbti: "",
-            born: "",
-        },
-        you: {
-            name: "",
-            gender: "",
-            blood: "",
-            mbti: "",
-            born: "",
-        },
+        me: {},
+        you: {},
     });
     const dataFile = (user, id) => {
         setUserData((userData) => {

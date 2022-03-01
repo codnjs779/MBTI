@@ -7,5 +7,4 @@ const GreyButton = ({ buttonTxt, onClick }) => {
         </button>
     );
 };
-
 export default GreyButton;
